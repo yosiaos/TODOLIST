@@ -1,4 +1,5 @@
 "use client"
+import { Warning } from 'postcss'
 import React, { useState } from 'react'
 const page = () => {
   const [title, settitle] = useState("")
@@ -6,7 +7,10 @@ const page = () => {
   const [mainTask, setMainTask] = useState([])
   const submitHandler = (e)=>{
    e.preventDefault()
-   setMainTask([...mainTask,{title,desc}]);
+   if(title.length!=0 && desc.length!=0)
+   {setMainTask([...mainTask,{title,desc}]);}
+   else
+   {alert("Empty Tasks Cannot be added")}
    settitle("");
    setdesc("");
    console.log(mainTask);
