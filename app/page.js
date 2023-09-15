@@ -36,14 +36,14 @@ const page = () => {
   }
   
  return (
-   <div className='w-full'>
+   <div className='w-full min-h-screen flex flex-col overflow-x-auto'>
    <h1 className='bg-black text-white p-5 text-4xl font-bold text-center w-auto'>My Todo List</h1>
    <form onSubmit={submitHandler}> 
-    <input className='border-zinc-800 text-2xl m-5 px-4 py-2 border-4 rounded' placeholder='Enter the task here' value={title} 
+    <input className='border-zinc-800 text-xl m-5 px-4 py-2 border-4 rounded w-3/4' placeholder='Enter the task here' value={title} 
     onChange={(e)=>{
       settitle(e.target.value)
     }}/>
-    <input className='border-zinc-800 text-2xl m-5 px-4 py-2 border-4 rounded' placeholder='Enter the description here'value={desc} 
+    <input className='border-zinc-800 text-xl m-5 px-4 py-2 border-4 rounded w-3/4' placeholder='Enter the description here'value={desc} 
     onChange={(e)=>{
       setdesc(e.target.value)
     }}/>
